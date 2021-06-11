@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fon"
+    app:layout_constraintHorizontal_chainStyle="spread_inside"
+    app:layout_constraintVertical_chainStyle="spread_inside">
+
+
+    <TextView
+        android:id="@+id/textView_first_value"
+        style="@style/textView_style"
+        android:maxLength="10"
+        app:layout_constraintBottom_toTopOf="@id/textView_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_sign"
+        style="@style/textView_style"
+        android:maxLength="1"
+        app:layout_constraintBottom_toTopOf="@id/textView_second_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_second_value"
+        style="@style/textView_style"
+        android:maxLength="10"
+        app:layout_constraintBottom_toTopOf="@id/textView_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_result"
+        style="@style/textView_style"
+        app:layout_constraintBottom_toTopOf="@id/button_equally"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_cancel"
+        style="@style/button_style"
+        android:text="@string/_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_0"
+        style="@style/button_style"
+        android:text="@string/_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_point"
+        app:layout_constraintStart_toEndOf="@id/button_cancel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_point"
+        style="@style/button_style"
+        android:text="@string/_point"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_division"
+        app:layout_constraintStart_toEndOf="@id/button_0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_division"
+        style="@style/button_style"
+        android:text="@string/_division"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_point"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_7"
+        style="@style/button_style"
+        android:text="@string/_7"
+        app:layout_constraintBottom_toTopOf="@id/button_4"
+        app:layout_constraintEnd_toStartOf="@id/button_8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_8"
+        style="@style/button_style"
+        android:text="@string/_8"
+        app:layout_constraintBottom_toTopOf="@id/button_5"
+        app:layout_constraintEnd_toStartOf="@id/button_9"
+        app:layout_constraintStart_toEndOf="@id/button_7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_9"
+        style="@style/button_style"
+        android:text="@string/_9"
+        app:layout_constraintBottom_toTopOf="@id/button_6"
+        app:layout_constraintEnd_toStartOf="@id/button_plus"
+        app:layout_constraintStart_toEndOf="@id/button_8" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_multyply"
+        style="@style/button_style"
+        android:text="@string/_multiply"
+        app:layout_constraintBottom_toTopOf="@id/button_division"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_4"
+        style="@style/button_style"
+        android:text="@string/_4"
+        app:layout_constraintBottom_toTopOf="@id/button_1"
+        app:layout_constraintEnd_toStartOf="@id/button_5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_5"
+        style="@style/button_style"
+        android:text="@string/_5"
+        app:layout_constraintBottom_toTopOf="@id/button_2"
+        app:layout_constraintEnd_toStartOf="@id/button_6"
+        app:layout_constraintStart_toEndOf="@id/button_4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_6"
+        style="@style/button_style"
+        android:text="@string/_6"
+        app:layout_constraintBottom_toTopOf="@id/button_3"
+        app:layout_constraintEnd_toStartOf="@id/button_minus"
+        app:layout_constraintStart_toEndOf="@id/button_5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_minus"
+        style="@style/button_style"
+        android:text="@string/_minus"
+        app:layout_constraintBottom_toTopOf="@id/button_multyply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_1"
+        style="@style/button_style"
+        android:text="@string/_1"
+        app:layout_constraintBottom_toTopOf="@id/button_cancel"
+        app:layout_constraintEnd_toStartOf="@id/button_2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_2"
+        style="@style/button_style"
+        android:text="@string/_2"
+        app:layout_constraintBottom_toTopOf="@id/button_0"
+        app:layout_constraintEnd_toStartOf="@id/button_3"
+        app:layout_constraintStart_toEndOf="@id/button_1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_3"
+        style="@style/button_style"
+        android:text="@string/_3"
+        app:layout_constraintBottom_toTopOf="@id/button_point"
+        app:layout_constraintEnd_toStartOf="@id/button_multyply"
+        app:layout_constraintStart_toEndOf="@id/button_2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_plus"
+        style="@style/button_style"
+        android:text="@string/_plus"
+        app:layout_constraintBottom_toTopOf="@id/button_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_9" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_back"
+        style="@style/big_button_style"
+        android:text="@string/_back"
+        app:layout_constraintBottom_toTopOf="@id/button_7"
+        app:layout_constraintEnd_toEndOf="@id/button_8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_equally"
+        style="@style/big_button_style"
+        android:text="@string/_equally"
+        app:layout_constraintBottom_toTopOf="@id/button_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

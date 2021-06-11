@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:insetTop">3dp</item>
+        <item name="android:insetBottom">3dp</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+
+    <style name="big_button_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="android:insetTop">3dp</item>
+        <item name="android:insetBottom">3dp</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+
+    <style name="textView_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:background">#8DFAF5F5</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+
+</resources>
