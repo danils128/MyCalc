@@ -1,9 +1,11 @@
 package com.example.mycalc;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,11 +31,33 @@ public class MainActivity extends AppCompatActivity {
     private Button button_plus;
     private Button button_minus;
     private Button button_division;
-    private Button button_multyply;
+    private Button button_multiply;
     private Button button_point;
     private Button button_equally;
     private Button button_cancel;
     private Button button_backspace;
+    private String key1 = "key1";
+    private String key2 = "key2";
+    private String key3 = "key3";
+    private String key4 = "key4";
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(key1, entry_field.getText().toString());
+        outState.putString(key2, entry_field_2.getText().toString());
+        outState.putString(key3, operand_field.getText().toString());
+        outState.putString(key4, result_field.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        entry_field.setText(savedInstanceState.getString(key1));
+        entry_field_2.setText(savedInstanceState.getString(key2));
+        operand_field.setText(savedInstanceState.getString(key3));
+        result_field.setText(savedInstanceState.getString(key4));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         button_plus = findViewById(R.id.button_plus);
         button_equally = findViewById(R.id.button_equally);
         button_minus = findViewById(R.id.button_minus);
-        button_multyply = findViewById(R.id.button_multyply);
+        button_multiply = findViewById(R.id.button_multyply);
         button_point = findViewById(R.id.button_point);
         button_division = findViewById(R.id.button_division);
         button_cancel = findViewById(R.id.button_cancel);
@@ -67,15 +91,15 @@ public class MainActivity extends AppCompatActivity {
         button_0.setOnClickListener(v -> {
 
             if (!operationBul) {
-                if (entry_field.getText().toString().startsWith("0")){
-                    if (entry_field.getText().toString().contains(".")){
+                if (entry_field.getText().toString().startsWith("0")) {
+                    if (entry_field.getText().toString().contains(".")) {
                         setButtonToField(entry_field, button_0);
                     }
                 } else setButtonToField(entry_field, button_0);
 
             } else {
-                if (entry_field_2.getText().toString().startsWith("0")){
-                    if (entry_field_2.getText().toString().contains(".")){
+                if (entry_field_2.getText().toString().startsWith("0")) {
+                    if (entry_field_2.getText().toString().contains(".")) {
                         setButtonToField(entry_field_2, button_0);
                     }
                 } else setButtonToField(entry_field_2, button_0);
@@ -136,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
             setButtonToField(operand_field, button_minus);
             operationBul = true;
         });
-        button_multyply.setOnClickListener(v -> {
-            setButtonToField(operand_field, button_multyply);
+        button_multiply.setOnClickListener(v -> {
+            setButtonToField(operand_field, button_multiply);
             operationBul = true;
         });
         button_division.setOnClickListener(v -> {
@@ -173,13 +197,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         button_backspace.setOnClickListener(v -> {
-            if (!result_field.getText().toString().isEmpty()){
+            if (!result_field.getText().toString().isEmpty()) {
                 result_field.setText("");
             } else {
                 if (!operationBul) {
-                if (!entry_field.getText().toString().isEmpty())
+                    if (!entry_field.getText().toString().isEmpty())
 
-                    entry_field.setText(entry_field.getText().toString().substring(0, entry_field.getText().toString().length() - 1));
+                        entry_field.setText(entry_field.getText().toString().substring(0, entry_field.getText().toString().length() - 1));
                 } else {
                     if (entry_field_2.getText().toString().isEmpty()) {
                         operand_field.setText("");
@@ -189,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-        }});
+            }
+        });
 
 
         button_equally.setOnClickListener(v -> {
